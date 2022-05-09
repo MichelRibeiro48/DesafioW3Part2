@@ -1,4 +1,4 @@
-import { Agencia } from "../../domain/entities/agencia";
+import { Agencia } from "../../domain/entities/Agencia";
 
 
 export interface IAcharAgencia {

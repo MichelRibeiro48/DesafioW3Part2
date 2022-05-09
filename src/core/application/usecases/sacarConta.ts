@@ -1,0 +1,15 @@
+import { IAcharAgencia } from "../repositories/IAcharAgencia";
+import { IAcharConta } from "../repositories/IAcharConta";
+
+class sacarConta {
+  constructor(private acharAgencia: IAcharAgencia, private acharConta: IAcharConta){}
+
+  async execute(numeroAgencia: string, numeroConta: string, ValorDoSaque: number) {
+    const agencia = await this.acharAgencia.acharPorNumeroAgencia(numeroAgencia)
+    if (agencia === null) throw new Error("agencia inexistente")
+    const conta = await this.acharConta.acharPorNumeroEAgencia(numeroConta,numeroAgencia)
+    if (conta === null) throw new Error("conta inexistente")
+    
+    return conta.sacarDinheiro(ValorDoSaque)
+  }
+}
