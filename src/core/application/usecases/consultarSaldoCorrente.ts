@@ -1,16 +1,9 @@
-import { IAcharAgencia } from "../repositories/IAcharAgencia";
-import { IAcharConta } from "../repositories/IAcharConta";
+import { ContaCorrente } from "../../domain/entities/ContaCorrente";
 
+export class consultarSaldo {
+  constructor(){}
 
-
-class consultarSaldo {
-  constructor(private acharAgencia: IAcharAgencia , private acharConta: IAcharConta){}
-
-  async execute(numeroConta: string, numeroAgencia: string) {
-    const agencia = await this.acharAgencia.acharPorNumeroAgencia(numeroAgencia)
-    if (agencia === null) throw new Error("agencia inexistente")
-    const conta = await this.acharConta.acharPorNumeroEAgencia(numeroConta,numeroAgencia)
-    if (conta === null) throw new Error("conta inexistente")
+  async execute(conta: ContaCorrente) {
     return conta.pegarSaldo();
   }
 }

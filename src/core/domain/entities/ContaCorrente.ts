@@ -1,4 +1,4 @@
-import { Agencia } from "./agencia";
+import { Agencia } from "./Agencia";
 import { Cliente } from "./Cliente"
 
 export class ContaCorrente {
