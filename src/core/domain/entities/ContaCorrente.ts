@@ -7,7 +7,7 @@ export class ContaCorrente {
     private agencia: Agencia,
     private saldo: number,
     private numero: string,
-    private id: number,
+    private id: string,
   ){}
   pegarSaldo() {
     return this.saldo;

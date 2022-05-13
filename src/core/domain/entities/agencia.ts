@@ -1,8 +1,8 @@
 export class Agencia {
   constructor(
-    private numero: number,
-    private id: number,
-    private nome: number,
+    private numero: string,
+    private id: string,
+    private nome: string,
   ){}
 
   
